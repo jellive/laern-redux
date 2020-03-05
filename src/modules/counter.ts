@@ -10,6 +10,15 @@ export const setDiff = (diff: number) => ({ type: SET_DIFF, diff })
 export const increase = () => ({ type: INCREASE })
 export const decrease = () => ({ type: DECREASE })
 
+export type CounterState = {
+  number: number
+  diff: number
+}
+export interface CounterAction {
+  type?: string
+  counter: CounterState
+}
+
 // 초기 상태 선언
 const initialState = {
   number: 0,
