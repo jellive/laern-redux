@@ -7,8 +7,9 @@ import { createStore } from 'redux';
 import rootReducer from './modules';
 import { Provider } from 'react-redux'
 // import './exercise'
+import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개발자 도구
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, composeWithDevTools())
 console.log(store.getState())
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
